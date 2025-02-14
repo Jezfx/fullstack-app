@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import {
   Card,
   Flex,
-  Spinner,
+  Skeleton,
   Avatar,
   Stack,
   Button,
@@ -21,8 +21,12 @@ import {
 import { useNextDeliveryMessage } from "./App.hooks";
 
 function App() {
-  const { fetchNextDeliveryMessage, nextDeliveryMessage, isLoading } =
-    useNextDeliveryMessage();
+  const {
+    fetchNextDeliveryMessage,
+    nextDeliveryMessage,
+    isLoading,
+    errorMessage,
+  } = useNextDeliveryMessage();
 
   const { id } = useParams();
 
@@ -30,18 +34,17 @@ function App() {
     if (id) fetchNextDeliveryMessage(id);
   }, [fetchNextDeliveryMessage, id]);
 
-  if (isLoading || !nextDeliveryMessage) {
+  if (errorMessage) {
     return (
       <Center bg="white" h="100vh" w="100vw">
-        <Spinner />
-        loading
+        {errorMessage}
       </Center>
     );
   }
 
   return (
     <Center bg="white" h="100vh" w="100vw">
-      <Card>
+      <Card as={isLoading ? Skeleton : Card}>
         <CardBody p={[5, 5, 0, 0]} position="relative">
           {nextDeliveryMessage.freeGift && (
             <Box
