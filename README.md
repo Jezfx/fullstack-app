@@ -23,3 +23,6 @@ Things I ran out of time for
 - It’s not super robust, no good handling for errors or empty incorrect data. Implementing `react-error-boundary` would have been nice. And `zod` to validate data coming in.
 - Some shared types between api and client
 - The `comms.utils.ts` is very messy, I normally compose little functional util functions (loadash / ramda)
+
+
+... thank you ✌️
