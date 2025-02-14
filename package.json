@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "turbo": "^2.4.2"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "packageManager": "npm@10.8.2",
+  "dependencies": {
+    "@chakra-ui/react": "^3.8.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "framer-motion": "^12.4.2"
+  }
+}
