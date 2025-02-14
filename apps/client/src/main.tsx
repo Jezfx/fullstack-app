@@ -13,10 +13,10 @@ createRoot(document.getElementById("root")!).render(
           <Route
             path="/"
             element={
-              <Navigate to="/comms/your-next-delivery/ff535484-6880-4653-b06e-89983ecf4ed5" />
+              <Navigate to="/welcome/ff535484-6880-4653-b06e-89983ecf4ed5" />
             }
           />
-          <Route path="/comms/your-next-delivery/:id" element={<App />} />
+          <Route path="/welcome/:id" element={<App />} />
         </Routes>
       </BrowserRouter>
     </StrictMode>
